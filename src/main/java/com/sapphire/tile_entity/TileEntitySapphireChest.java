@@ -196,5 +196,60 @@ public class TileEntitySapphireChest extends TileEntityChest{
 
 	        return this.cachedChestType;
 	    }
+	    
+	    public ItemStack getStackInSlot(int par1){
+	    	return this.chestContents[par1];
+	    }
+	    
+	    public ItemStack decrStackSize(int par1, int par2)
+	    {
+	        if (this.chestContents[par1] != null)
+	        {
+	            ItemStack itemstack;
+
+	            if (this.chestContents[par1].stackSize <= par2)
+	            {
+	                itemstack = this.chestContents[par1];
+	                this.chestContents[par1] = null;
+	                this.markDirty();
+	                return itemstack;
+	            }
+	            else
+	            {
+	                itemstack = this.chestContents[par1].splitStack(par2);
+
+	                if (this.chestContents[par1].stackSize == 0)
+	                {
+	                    this.chestContents[par1] = null;
+	                }
+
+	                this.markDirty();
+	                return itemstack;
+	            }
+	        }
+	        else
+	        {
+	            return null;
+	        }
+	    }
+	    
+	    public ItemStack getStackInSlotOnClosing(int par1){
+	    	if(this.chestContents[par1] != null){
+	    		ItemStack itemstack = this.chestContents[par1];
+	    		this.chestContents[par1] = null;
+	    		return itemstack;
+	    	}
+	    	else{
+	    		return null;
+	    	}
+	    }
+	    
+	    public void setInventorySlotContents(int par1, ItemStack itemstack){
+	    	this.chestContents[par1] = itemstack;
+	    	if(itemstack != null && itemstack.stackSize > this.getInventoryStackLimit()){
+	    		itemstack.stackSize = this.getInventoryStackLimit();
+	    	}
+	    	this.markDirty();
+	    }
 
 }

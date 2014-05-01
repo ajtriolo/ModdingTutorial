@@ -13,6 +13,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
 import com.sapphire.blocksitems.sapphireChest;
+import com.sapphire.lib.Strings;
 import com.sapphire.tile_entity.TileEntitySapphireChest;
 
 import cpw.mods.fml.common.FMLLog;
@@ -22,8 +23,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class SapphireChestRenderer extends TileEntitySpecialRenderer
 {
-    private static final ResourceLocation field_147505_d = new ResourceLocation("textures/entity/chest/PupletLargeChest.png");
-    private static final ResourceLocation field_147504_g = new ResourceLocation("textures/entity/chest/PupletChest.png");
+    private static final ResourceLocation field_147505_d = new ResourceLocation(Strings.MODID + ":textures/blocks/LargePupletChest");
+    private static final ResourceLocation field_147504_g = new ResourceLocation(Strings.MODID + ":textures/blocks/PupletChest");
     private ModelChest field_147510_h = new ModelChest();
     private ModelChest field_147511_i = new ModelLargeChest();
     private boolean field_147509_j;

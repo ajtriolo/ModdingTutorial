@@ -57,6 +57,7 @@ public class mainRegistry
     	SapphireItems.mainRegistry();
     	SapphireWorld.mainRegistry();
     	TileEntitySapphire.mainRegistry();
+    	CraftingManager.MainClass();
     	
     	proxy.registerRenderThings();
     	
