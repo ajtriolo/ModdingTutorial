@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import com.sapphire.blocksitems.sapphireChest;
+import com.sapphire.blocks.sapphireChest;
 import com.sapphire.lib.Strings;
 import com.sapphire.tile_entity.TileEntitySapphireChest;
 

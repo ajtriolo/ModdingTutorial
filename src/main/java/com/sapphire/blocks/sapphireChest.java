@@ -1,4 +1,4 @@
-package com.sapphire.blocksitems;
+package com.sapphire.blocks;
 
 import static net.minecraftforge.common.util.ForgeDirection.DOWN;
 

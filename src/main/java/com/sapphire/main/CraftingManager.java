@@ -3,7 +3,7 @@ package com.sapphire.main;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.sapphire.blocksitems.SapphireBlocks;
+import com.sapphire.blocks.SapphireBlocks;
 import com.sapphire.items.SapphireItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;

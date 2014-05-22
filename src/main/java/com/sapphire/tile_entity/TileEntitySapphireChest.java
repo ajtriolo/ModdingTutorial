@@ -1,5 +1,5 @@
 package com.sapphire.tile_entity;
-import com.sapphire.blocksitems.sapphireChest;
+import com.sapphire.blocks.sapphireChest;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;

@@ -1,30 +1,18 @@
 package com.sapphire.main;
 
-import com.sapphire.blocksitems.SapphireBlocks;
-import com.sapphire.blocksitems.sapphireOre;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
+import net.minecraftforge.common.AchievementPage;
+
+import com.sapphire.blocks.SapphireBlocks;
+import com.sapphire.enchantments.EnchantmentSpeedBoost;
 import com.sapphire.items.SapphireItems;
-import com.sapphire.items.axeSapphire;
-import com.sapphire.items.foodStrawberry;
-import com.sapphire.items.hoeSapphire;
-import com.sapphire.items.pickaxeSapphire;
-import com.sapphire.items.sapphireArmor;
-import com.sapphire.items.sapphireIngot;
-import com.sapphire.items.shovelSapphire;
-import com.sapphire.items.swordSapphire;
 import com.sapphire.lib.Strings;
 import com.sapphire.tile_entity.TileEntitySapphire;
 import com.sapphire.world.SapphireWorld;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemFood;
-import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -34,7 +22,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Strings.MODID, name = Strings.name, version = Strings.version)
 public class mainRegistry
@@ -48,6 +35,11 @@ public class mainRegistry
     
     @Instance(Strings.MODID)
     public static mainRegistry modInstance;
+    
+    public static Achievement achievementSapphire;
+    public static Achievement achievementSapphirePick; 
+    
+    public static final Enchantment speedBoost = new EnchantmentSpeedBoost(84, 5);
     
     @EventHandler
     public void PreLoad(FMLPreInitializationEvent PreEvent)
@@ -67,7 +59,14 @@ public class mainRegistry
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
+    	achievementSapphire = new Achievement("achievement.mineSapphire", "mineSapphire", 0, 0, new ItemStack(SapphireItems.sapphireIngot), (Achievement)null).initIndependentStat().registerStat();
+    	achievementSapphirePick = new Achievement("achievement.craftPick", "craftPick", 2, 1, SapphireItems.pickaxeSapphire, achievementSapphire).registerStat();
     	
+    	AchievementPage.registerAchievementPage(new AchievementPage("Sapphire Achievements", new Achievement[]{achievementSapphire, achievementSapphirePick}));
+    	
+    	
+    	FMLCommonHandler.instance().bus().register(new SapphireOnMineEvent());
+    	FMLCommonHandler.instance().bus().register(new SapphireOnCraftEvent());
     	
     }
     

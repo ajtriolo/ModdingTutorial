@@ -1,6 +1,6 @@
 package com.sapphire.items;
 
-import com.sapphire.blocksitems.SapphireBlocks;
+import com.sapphire.blocks.SapphireBlocks;
 import com.sapphire.main.mainRegistry;
 
 import net.minecraft.item.ItemFood;

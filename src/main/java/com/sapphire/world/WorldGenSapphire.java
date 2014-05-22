@@ -2,7 +2,7 @@ package com.sapphire.world;
 
 import java.util.Random;
 
-import com.sapphire.blocksitems.SapphireBlocks;
+import com.sapphire.blocks.SapphireBlocks;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;

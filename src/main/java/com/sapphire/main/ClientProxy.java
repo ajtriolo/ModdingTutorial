@@ -3,7 +3,7 @@ package com.sapphire.main;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 
-import com.sapphire.blocksitems.SapphireBlocks;
+import com.sapphire.blocks.SapphireBlocks;
 import com.sapphire.render.item.ItemRendererSapphireChest;
 import com.sapphire.render.tile_entity.SapphireChestRenderer;
 import com.sapphire.tile_entity.TileEntitySapphireChest;

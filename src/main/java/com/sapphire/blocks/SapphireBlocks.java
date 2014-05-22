@@ -1,4 +1,4 @@
-package com.sapphire.blocksitems;
+package com.sapphire.blocks;
 
 import com.sapphire.items.SapphireItems;
 import com.sapphire.items.axeSapphire;
