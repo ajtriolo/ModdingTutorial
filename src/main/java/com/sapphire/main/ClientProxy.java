@@ -1,5 +1,6 @@
 package com.sapphire.main;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 
@@ -9,6 +10,7 @@ import com.sapphire.render.tile_entity.SapphireChestRenderer;
 import com.sapphire.tile_entity.TileEntitySapphireChest;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 
 public class ClientProxy extends ServerProxy{
 	
@@ -16,6 +18,8 @@ public class ClientProxy extends ServerProxy{
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySapphireChest.class, new SapphireChestRenderer());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(SapphireBlocks.sapphireChest), new ItemRendererSapphireChest());
+		FMLCommonHandler.instance().bus().register(new ServerTickHandler(Minecraft.getMinecraft()));
+	
 	}
 
 }

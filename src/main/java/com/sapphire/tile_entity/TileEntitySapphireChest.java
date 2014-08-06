@@ -31,6 +31,11 @@ public class TileEntitySapphireChest extends TileEntityChest{
 	    {
 	        return this.customName != null && this.customName.length() > 0;
 	    }
+	    
+	    @Override
+	    public int getSizeInventory(){
+	    	return 40;
+	    }
 
 	    public void func_145976_a(String p_145976_1_)
 	    {
@@ -250,6 +255,11 @@ public class TileEntitySapphireChest extends TileEntityChest{
 	    		itemstack.stackSize = this.getInventoryStackLimit();
 	    	}
 	    	this.markDirty();
+	    }
+	    
+	    public int getInventoryStackLimit()
+	    {
+	        return 64;
 	    }
 
 }

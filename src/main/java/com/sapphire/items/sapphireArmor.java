@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -52,6 +53,8 @@ public class sapphireArmor extends ItemArmor{
 				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 50, j - 1));
 			}
 		}
+		
+		
 	}
 	
 }

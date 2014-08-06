@@ -35,7 +35,7 @@ public class SapphireBlocks {
     public static Block sapphireChest;
     public static CreativeTabs sapphireTab = new CreativeTabs("sapphire"){
     	public Item getTabIconItem(){
-    		return SapphireItems.chestplateSapphire;
+    		return Item.getItemFromBlock(sapphireOre);
     	}
     };
     

@@ -3,8 +3,11 @@ package com.sapphire.main;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
+import net.minecraft.world.WorldType;
 import net.minecraftforge.common.AchievementPage;
 
+import com.sapphire.biome.BiomeRegistry;
+import com.sapphire.biome.WorldTypeSapphire;
 import com.sapphire.blocks.SapphireBlocks;
 import com.sapphire.enchantments.EnchantmentSpeedBoost;
 import com.sapphire.items.SapphireItems;
@@ -49,7 +52,11 @@ public class mainRegistry
     	SapphireItems.mainRegistry();
     	SapphireWorld.mainRegistry();
     	TileEntitySapphire.mainRegistry();
-    	CraftingManager.MainClass();
+    	CraftingManager.mainRegistry();
+    	BiomeRegistry.mainRegsitry();
+    	
+    	
+    	
     	
     	proxy.registerRenderThings();
     	
@@ -68,11 +75,18 @@ public class mainRegistry
     	FMLCommonHandler.instance().bus().register(new SapphireOnMineEvent());
     	FMLCommonHandler.instance().bus().register(new SapphireOnCraftEvent());
     	
+    
+    	
+    	
+    	
+    	
     }
     
     @EventHandler
     public void PostLoad(FMLPostInitializationEvent PostEvent)
     {
+    	
+    	WorldType SAPPHIRE = new WorldTypeSapphire(3, "sapphire");
     	
     	
     }
