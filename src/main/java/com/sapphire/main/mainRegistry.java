@@ -53,7 +53,7 @@ public class mainRegistry
     	SapphireWorld.mainRegistry();
     	TileEntitySapphire.mainRegistry();
     	CraftingManager.mainRegistry();
-    	BiomeRegistry.mainRegsitry();
+    	BiomeRegistry.mainRegistry();
     	
     	
     	
