@@ -12,6 +12,7 @@ import com.sapphire.blocks.SapphireBlocks;
 import com.sapphire.enchantments.EnchantmentSpeedBoost;
 import com.sapphire.items.SapphireItems;
 import com.sapphire.lib.Strings;
+import com.sapphire.mob.EntitySapphire;
 import com.sapphire.tile_entity.TileEntitySapphire;
 import com.sapphire.world.SapphireWorld;
 
@@ -54,6 +55,7 @@ public class mainRegistry
     	TileEntitySapphire.mainRegistry();
     	CraftingManager.mainRegistry();
     	BiomeRegistry.mainRegsitry();
+    	EntitySapphire.mainRegistry();
     	
     	
     	
