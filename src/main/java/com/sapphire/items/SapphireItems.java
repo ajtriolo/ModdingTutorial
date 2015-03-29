@@ -38,7 +38,7 @@ public class SapphireItems {
 		RenderingRegistry.addNewArmourRendererPrefix("5");
 		
 		sapphireIngot = new sapphireIngot().setUnlocalizedName("sapphireIngot");
-    	swordSapphire = new swordSapphire(enumToolMaterialSapphire, 50).setUnlocalizedName("swordSapphire").setCreativeTab(SapphireBlocks.sapphireTab);
+    	swordSapphire = new swordSapphire(enumToolMaterialSapphire, 6).setUnlocalizedName("swordSapphire").setCreativeTab(SapphireBlocks.sapphireTab);
     	pickaxeSapphire = new pickaxeSapphire(enumToolMaterialSapphire).setUnlocalizedName("pickSapphire").setCreativeTab(SapphireBlocks.sapphireTab);
     	shovelSapphire = new shovelSapphire(enumToolMaterialSapphire).setUnlocalizedName("shovelSapphire").setCreativeTab(SapphireBlocks.sapphireTab);
     	hoeSapphire = new hoeSapphire(enumToolMaterialSapphire).setUnlocalizedName("hoeSapphire").setCreativeTab(SapphireBlocks.sapphireTab);

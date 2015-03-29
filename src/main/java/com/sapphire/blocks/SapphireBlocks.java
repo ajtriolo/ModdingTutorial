@@ -38,16 +38,19 @@ public class SapphireBlocks {
     		return Item.getItemFromBlock(sapphireOre);
     	}
     };
+    public static Block sapphirePortal;
     
     public static void initBlocks(){
     	sapphireOre = new sapphireOre(Material.rock).setHardness(1.5F).setBlockName("sapphireOre");
     	sapphireChest = new sapphireChest(0).setBlockName("Sapphire Chest").setCreativeTab(sapphireTab);
+    	sapphirePortal = new SapphirePortal();
     }
     
     public static void registerBlocks(){
     	
     	GameRegistry.registerBlock(sapphireOre, "sapphireOre");
     	GameRegistry.registerBlock(sapphireChest, "sapphireChest");
+    	GameRegistry.registerBlock(sapphirePortal, "sapphirePortal");
     	
     }
 }

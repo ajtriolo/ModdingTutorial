@@ -45,16 +45,22 @@ public class sapphireArmor extends ItemArmor{
 			this.itemIcon = reg.registerIcon("sapphire:bootsSapphire");
 	}
 	
+	
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack){
-		if(stack.getItem() == SapphireItems.bootsSapphire){
-			int j = EnchantmentHelper.getEnchantmentLevel(mainRegistry.speedBoost.effectId, stack);
-			if(j > 0){
-				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 50, j - 1));
+		if(player.getCurrentArmor(0) != null && player.getCurrentArmor(1) != null && player.getCurrentArmor(2) != null && player.getCurrentArmor(3) != null){
+			ItemStack boots = player.getCurrentArmor(0);
+			ItemStack legs = player.getCurrentArmor(1);
+			ItemStack chest = player.getCurrentArmor(2);
+			ItemStack helmet = player.getCurrentArmor(3);
+			
+			if(boots.getItem() == SapphireItems.bootsSapphire && legs.getItem() == SapphireItems.legsSapphire && chest.getItem() == SapphireItems.chestplateSapphire && helmet.getItem() == SapphireItems.helmetSapphire){
+				player.addPotionEffect(new PotionEffect(Potion.resistance.getId(), 100, 1));
+				player.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 100, 0));
+				player.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 100, 0));
 			}
+			
 		}
-		
-		
 	}
 	
 }
